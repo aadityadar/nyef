@@ -494,11 +494,27 @@
         
         function sendData() {
             const FD = new FormData(form);
+
+            var age = document.getElementById("age").value;
+            var mobile = document.getElementById("phone").value;
+            //console.log(age);
+            age_int = parseInt(age);
+            console.log(age_int);
+            mobile_int = parseInt(mobile);
+            // console.log((/^[0-9]+/.test(age)));
+            if (age_int < 13 || age_int > 40 || isNaN(age_int) || /[a-zA-Z]+/.test(age))
+            {
+                return alert("Mistake in the age or You are not eligible (Only Below 40 and Above 13 are allowed to fill)");
+            }
+            if (mobile_int.toString().length != 10 || isNaN(mobile_int) ||  /[a-zA-Z]+/.test(mobile))
+                return alert("Enter Correct Mobile Number");
+
+
     
             let url = form.dataset.gfUrl;
             for(let [key, value] of FD) {
             url = url.replace(key, value);
-            console.log(url)
+            //console.log(url)
             }
     
             let opts = {
