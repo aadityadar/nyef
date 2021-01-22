@@ -502,7 +502,7 @@
             console.log(age_int);
             mobile_int = parseInt(mobile);
             // console.log((/^[0-9]+/.test(age)));
-            if (age_int < 13 || age_int > 40 || isNaN(age_int) || /[a-zA-Z]+/.test(age))
+            if (age_int < 18 || age_int > 99 || isNaN(age_int) || /[a-zA-Z]+/.test(age))
             {
                 return alert("Mistake in the age or You are not eligible (Only Below 40 and Above 13 are allowed to fill)");
             }
